@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 
 import { handleUserSignUp } from "./controllers/user.controller.js";
-import { handleCreateStore } from "./controllers/store.controller.js";
+import { handleCreateStore, handleGetStore } from "./controllers/store.controller.js";
 import {
   handleAddReview,
   handleListStoreReviews,
@@ -81,6 +81,8 @@ app.get("/api/v1/users/:memberId/missions/ongoing", handleListOngoingMissions);
 
 // ✅ 내가 진행 중인 미션 완료 처리
 app.patch("/api/v1/missions/complete", handleCompleteMission);
+
+app.get("/api/v1/stores/:storeId", handleGetStore);
 
 
 /**
