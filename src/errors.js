@@ -27,6 +27,15 @@ export class DuplicateUserEmailError extends Error {
     }
   }
   
+  export class StoreNotFoundError extends Error {
+  errorCode = "S002";
+  constructor(reason, data) {
+    super(reason);
+    this.reason = reason;
+    this.data = data;
+  }
+}
+  
   // ✅ 리뷰 관련 에러
   export class ReviewInputError extends Error {
     errorCode = "R001";
@@ -73,4 +82,3 @@ export class DuplicateUserEmailError extends Error {
       this.data = data;
     }
   }
-  
